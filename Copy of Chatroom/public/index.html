@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="../css/styles.css">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+window.onload = function(){
+	if(window.location.hash == '#error'){
+		document.getElementById("notification").style.visibility="visible";
+	}
+}
+
+$(document).ready(function() {
+	$('#submit').attr("disabled",true);
+    $('#username').keyup(function (e) {
+    	 var eingabe = document.getElementById("username").value;
+    	 var check = document.getElementById("check");
+    	 if(eingabe.length < 3){
+    		 check.innerHTML = "Username muss größer als 3 Zeichen sein!";
+    		 $('#submit').attr("disabled",true);
+    	 }else if(e.which === 32 || eingabe.match(" ")){
+    		 $('#submit').attr("disabled",true);
+    		 check.innerHTML = "Username darf kein Leerzeichen enthalten";
+    		 
+    	 }else{
+    		 check.innerHTML = "";
+    		 $('#submit').attr("disabled",false);
+    	 }
+    });
+});
+function sendMessage() {
+	var test = document.getElementById("username").value;
+	localStorage.setItem('username', document.getElementById('username').value);
+}
+
+</script>
+<style>
+body {
+	background-color: grey;
+}
+</style>
+</head>
+
+<body>
+	<div id="content">
+		<h1>Chatroom</h1>
+		<form action="/joinChat" id="form" method="post"
+			onsubmit="sendMessage();">
+			<div id="notification">Username in Verwendung</div>
+			
+			<input type="text" for="username" id="username" name="username" placeholder="Username"/> 
+			
+			<input	id="submit" type="submit" value="Chat beitreten" />
+			<div id="check"></div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+body {
+	font-family: arial, sans-serif;
+}
+
+form {
+	text-align: center;
+	position: relative;
+	top: 50px;
+}
+
+header, footer {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: auto;
+	padding: 0 0.5em;
+	background-color: grey;
+	font-size: 24px;
+	line-height: 2em;
+	height: 2em;
+	color: white;
+}
+
+submit {
+	display: block;
+	position: fixed;
+	right: 0;
+}
+
+header {
+	font-weight: bold;
+}
+
+header>a:last-child {
+	float: right;
+	color: #fff;
+	font-weight: normal;
+}
+
+footer {
+	top: auto;
+	bottom: 0;
+}
+
+.textPrivate {
+	font-weight: bold;
+	color: green;
+}
+
+#text {
+	right: 10px;
+	margin-top: 10px;
+	color: grey;
+	width: 100%;
+}
+
+#senden {
+	position: fixed;
+	bottom: 10px;
+	right: 8px;
+	color: grey;
+}
+
+#notification {
+	visibility: hidden;
+	color: white;
+}
+#check{
+	text-align: center; 
+}
+
+#content {
+	margin: 80px 0.5em;
+	list-style: none;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+}
+
+ul>li {
+	margin-top: 10px;
+}
+
+.privateMessage {
+	margin-top: 10px;
+	color: green;
+	font-weight: bold;
+}
